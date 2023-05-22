@@ -32,15 +32,17 @@ public class nations {
 				ps.setString(1, "%" + searchS + "%");
 
 				try (ResultSet rs = ps.executeQuery()) {
-
+					System.out.print(
+							"COUNTRY         " + "ID         " + "CONTINENT         " + "REGION         " + " - \n");
 					while (rs.next()) {
 
 						final String name = rs.getString(1);
 						final String countryId = rs.getString(2);
 						final String continentName = rs.getString(3);
 						final String regionName = rs.getString(4);
-						System.out
-								.println(name + " - " + countryId + " - " + continentName + " - " + regionName + " - ");
+
+						System.out.print(name + "          " + countryId + "           " + continentName
+								+ "            " + regionName + "       \n");
 					}
 				}
 			} catch (SQLException ex) {
